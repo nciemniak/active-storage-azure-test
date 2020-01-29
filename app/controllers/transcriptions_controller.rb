@@ -7,7 +7,7 @@ class TranscriptionsController < ApplicationController
     file.write("test")
     file.close()
 
-    @transcription.file.attach(file)
+    @transcription.file.attach(io: File.open(full_path_to_file), filename: 'temp.txt')
 
     # error happens here:
     @transcription.file.download
