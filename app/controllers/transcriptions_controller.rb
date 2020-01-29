@@ -9,9 +9,8 @@ class TranscriptionsController < ApplicationController
 
     @transcription.file.attach(file)
 
-    binding.pry
-    puts 'file contents: '
-    puts @transcription.file.download
+    # error happens here:
+    @transcription.file.download
 
     send_file full_path_to_file
   end
